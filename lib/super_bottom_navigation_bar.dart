@@ -8,8 +8,6 @@ library super_bottom_navigation_bar;
 
 import 'package:flutter/material.dart';
 
-
-
 /* Main Class */
 
 ///Amazing BottomNavigationBar widget , you can use it for your pro UI/UX
@@ -27,8 +25,7 @@ class SuperBottomNavigationBar extends StatefulWidget {
     this.duration = const Duration(milliseconds: 400),
     this.elevation = 8,
     this.onSelected,
-  }):
-        assert(items.length > 0),
+  })  : assert(items.length > 0),
         assert(items.length <= 10),
         assert(currentIndex < items.length),
         assert(currentIndex >= 0),
@@ -37,12 +34,9 @@ class SuperBottomNavigationBar extends StatefulWidget {
         // assert(curve != null),
         // assert(duration != null),
         assert(elevation >= 0.0);
-        // assert(padding != null);
-
-
+  // assert(padding != null);
 
   /* Variables */
-
 
   ///[items] List of SuperBottomNavigationBarItem to show them in your BottomNavigationBar.
   final List<SuperBottomNavigationBarItem> items;
@@ -71,34 +65,28 @@ class SuperBottomNavigationBar extends StatefulWidget {
   final double elevation;
 
   ///[onSelected] Callback method , Return the index of the tab that was tapping.
-  ValueChanged<int>? onSelected = (int index){};
-
+  ValueChanged<int>? onSelected = (int index) {};
 
   @override
+
   /// Creating state fo SuperBottomNavigationBar.
   State<StatefulWidget> createState() => _SuperBottomNavigationBarState();
-
 }
-
-
 
 /* SuperBottomNavigationBar Widget Class */
 
 /// This class is represent BottomNavigationBar Widget.
 class _SuperBottomNavigationBarState extends State<SuperBottomNavigationBar> {
-
   /// This class is represent BottomNavigationBar Widget.
   int selected = 0;
 
-
-
   @override
+
   /// using the widget.
   SuperBottomNavigationBar get widget => super.widget;
 
-
-
   @override
+
   /// When initialize the widget.
   void initState() {
     /// Super initialize.
@@ -107,11 +95,10 @@ class _SuperBottomNavigationBarState extends State<SuperBottomNavigationBar> {
     selected = widget.currentIndex;
   }
 
-
-
   @override
+
   /// Building the widget.
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
       padding: widget.padding,
       child: Material(
@@ -121,23 +108,21 @@ class _SuperBottomNavigationBarState extends State<SuperBottomNavigationBar> {
           child: Row(
             children: List.generate(
                 widget.items.length,
-                    (index) => Expanded(
-                  child: SuperNavItem(
-                    item: widget.items[index],
-                    selected: selected == index,
-                    height: widget.height,
-                    curve: widget.curve,
-                    duration: widget.duration,
-                    changeIndex: (){
-
-                      ///Change the state.
-                      setState(() {});
-                      selected = index;
-                      widget.onSelected!(index);
-                    },
-                  ),
-                )
-            ),
+                (index) => Expanded(
+                      child: SuperNavItem(
+                        item: widget.items[index],
+                        selected: selected == index,
+                        height: widget.height,
+                        curve: widget.curve,
+                        duration: widget.duration,
+                        changeIndex: () {
+                          ///Change the state.
+                          setState(() {});
+                          selected = index;
+                          widget.onSelected!(index);
+                        },
+                      ),
+                    )),
           ),
         ),
       ),
@@ -145,25 +130,19 @@ class _SuperBottomNavigationBarState extends State<SuperBottomNavigationBar> {
   }
 }
 
-
-
-
-
 /* SuperNavItem Widget Class */
 
 /// A tab to display in SuperBottomNavigationBar.
 class SuperNavItem extends StatelessWidget {
   ///The Constructor of SuperNavItem.
   ///All variables is required.
-  SuperNavItem({
-    required this.item,
-    required this.selected,
-    required this.height,
-    required this.curve,
-    required this.duration,
-    required this.changeIndex
-  });
-
+  SuperNavItem(
+      {required this.item,
+      required this.selected,
+      required this.height,
+      required this.curve,
+      required this.duration,
+      required this.changeIndex});
 
   ///[item] SuperNavItem object which contains all of data to display.
   final SuperBottomNavigationBarItem item;
@@ -183,12 +162,10 @@ class SuperNavItem extends StatelessWidget {
   ///[changeIndex] The callback method the change the state.
   final GestureTapCallback changeIndex;
 
-
-
   @override
+
   /// Building the widget
   Widget build(BuildContext context) {
-
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: InkWell(
@@ -202,53 +179,37 @@ class SuperNavItem extends StatelessWidget {
             duration: duration,
             curve: curve,
             decoration: BoxDecoration(
-
               border: selected
-                  ?
-              Border(
-                  bottom: BorderSide(
-                      color: item.borderBottomColor,
-                      width: item.borderBottomWidth
-                  )
-              ) :
-              Border(
-                  bottom: BorderSide(
-                      color: Colors.transparent,
-                      width: 0
-                  )
-              ),
-
-
+                  ? Border(
+                      bottom: BorderSide(
+                          color: item.borderBottomColor,
+                          width: item.borderBottomWidth))
+                  : Border(
+                      bottom: BorderSide(color: Colors.transparent, width: 0)),
               gradient: selected
-                  ?
-              LinearGradient(
-                colors:
-                [
-                  item.backgroundShadowColor.withOpacity(0.5),
-                  Colors.transparent,
+                  ? LinearGradient(
+                      colors: [
+                        item.backgroundShadowColor.withOpacity(0.5),
+                        Colors.transparent,
 
-                  // Color(0xFF6c5ce7).withOpacity(0.5),
-                  // Color(0xFF897dec).withOpacity(0.01)
-                ],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-              ) :
-              LinearGradient(
-                colors:
-                [
-                  Colors.transparent,
-                  Colors.transparent
-                ],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter,
-              ),
-
+                        // Color(0xFF6c5ce7).withOpacity(0.5),
+                        // Color(0xFF897dec).withOpacity(0.01)
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    )
+                  : LinearGradient(
+                      colors: [Colors.transparent, Colors.transparent],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
             ),
-
             child: Icon(
               selected ? item.selectedIcon : item.unSelectedIcon,
               size: selected ? item.size : item.size - 5,
-              color: selected ? item.selectedIconColor : item.unSelectedIconColor.withOpacity(0.5),
+              color: selected
+                  ? item.selectedIconColor
+                  : item.unSelectedIconColor.withOpacity(0.5),
             ),
           ),
         ),
@@ -257,27 +218,24 @@ class SuperNavItem extends StatelessWidget {
   }
 }
 
-
-
-
 /* Model Class */
 
 /// A tab to display in SuperBottomNavigationBar.
 class SuperBottomNavigationBarItem {
   ///The Constructor of SuperBottomNavigationBarItem.
-  const SuperBottomNavigationBarItem({
-    this.unSelectedIcon = Icons.star_border_outlined,
-    this.selectedIcon = Icons.star,
-    this.size = 30,
-    this.selectedIconColor = Colors.white,
-    this.unSelectedIconColor = Colors.white54,
-    this.highlightColor = Colors.transparent,  //Colors.grey.withOpacity(0.6)
-    this.splashColor = Colors.transparent,
-    this.hoverColor = Colors.transparent,  //Colors.grey.withOpacity(0.6)
-    this.borderBottomColor = const Color(0xFF6c5ce7),
-    this.borderBottomWidth = 3,
-    this.backgroundShadowColor = const Color(0xFF6c5ce7)
-  }) :
+  const SuperBottomNavigationBarItem(
+      {this.unSelectedIcon = Icons.star_border_outlined,
+      this.selectedIcon = Icons.star,
+      this.size = 30,
+      this.selectedIconColor = Colors.white,
+      this.unSelectedIconColor = Colors.white54,
+      this.highlightColor = Colors.transparent, //Colors.grey.withOpacity(0.6)
+      this.splashColor = Colors.transparent,
+      this.hoverColor = Colors.transparent, //Colors.grey.withOpacity(0.6)
+      this.borderBottomColor = const Color(0xFF6c5ce7),
+      this.borderBottomWidth = 3,
+      this.backgroundShadowColor = const Color(0xFF6c5ce7)})
+      :
         // assert(unSelectedIcon != null),
         // assert(selectedIcon != null),
         assert(size >= 7),
@@ -290,10 +248,7 @@ class SuperBottomNavigationBarItem {
         // assert(backgroundShadowColor != null),
         assert(borderBottomWidth >= 1);
 
-
-
   /* Variables */
-
 
   ///[unSelectedIcon] The icon of the tab when tab is not selected.
   final IconData unSelectedIcon;

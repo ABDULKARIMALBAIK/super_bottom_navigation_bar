@@ -1,3 +1,2 @@
 /// Test the package.
-void main() {
-}
+void main() {}
