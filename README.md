@@ -4,13 +4,19 @@ Amazing powerful animated widget, it is useful for modern apps by displaying pro
 
 Add Super BottomNavigationBar => Better UI/UX.
 
+Do you like circles ? see  [super_circle](https://pub.dev/packages/super_circle/install)
+
 
 [![pub](https://img.shields.io/pub/v/super_bottom_navigation_bar?color=blue&label=pub&logo=flutter&style=flat-square)](https://pub.dev/packages/super_bottom_navigation_bar/install)
 [![license](https://img.shields.io/github/license/ABDULKARIMALBAIK/super_bottom_navigation_bar?color=yellow&label=license&logo=github&style=flat-square)](https://pub.dev/packages/super_bottom_navigation_bar/install)
 [![repo_size](https://img.shields.io/github/languages/code-size/ABDULKARIMALBAIK/super_bottom_navigation_bar?color=red&label=repo_size&logo=github&style=flat-square)](https://pub.dev/packages/super_bottom_navigation_bar/install)
 
 
-# URLS
+
+<div align="center">
+<img src="https://github.com/ABDULKARIMALBAIK/super_bottom_navigation_bar/raw/main/screenshots/gifs/demo.gif" width="30%" height="30%" alt="demo"/>
+<img src="https://github.com/ABDULKARIMALBAIK/super_bottom_navigation_bar/raw/main/screenshots/images/img4.jpg" width="30%" height="30%" alt="photo"/>
+</div>
 
 
 
@@ -86,7 +92,9 @@ The `super_bottom_navigation_bar` package you can use it simply :
 ```
 
 
-### URL1
+<div align="center">
+<img src="https://github.com/ABDULKARIMALBAIK/super_bottom_navigation_bar/raw/main/screenshots/images/img1.jpg" width="300" alt="simple_design"/>
+</div>
 
 
 
@@ -137,7 +145,9 @@ The `super_bottom_navigation_bar` package you can use it simply :
 ```
 
 
-### URL2
+<div align="center">
+<img src="https://github.com/ABDULKARIMALBAIK/super_bottom_navigation_bar/raw/main/screenshots/images/img2.jpg" width="300" alt="normal_design"/>
+</div>
 
 
 
@@ -228,7 +238,9 @@ The `super_bottom_navigation_bar` package you can use it simply :
 ```
 
 
-### URL3
+<div align="center">
+<img src="https://github.com/ABDULKARIMALBAIK/super_bottom_navigation_bar/raw/main/screenshots/images/img3.jpg" width="300" alt="super_design"/>
+</div>
 
 
 
