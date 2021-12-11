@@ -33,11 +33,11 @@ class SuperBottomNavigationBar extends StatefulWidget {
         assert(currentIndex < items.length),
         assert(currentIndex >= 0),
         assert(height >= 25),
-        assert(backgroundColor != null),
-        assert(curve != null),
-        assert(duration != null),
-        assert(elevation >= 0.0),
-        assert(padding != null);
+        // assert(backgroundColor != null),
+        // assert(curve != null),
+        // assert(duration != null),
+        assert(elevation >= 0.0);
+        // assert(padding != null);
 
 
 
