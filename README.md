@@ -60,6 +60,8 @@ The `super_bottom_navigation_bar` package you can use it simply :
 
 
 > :warning:: The `items` value must be `items >= 1`.
+
+
 > :warning:: The `currentIndex` value must be `currentIndex >= 0 && currentIndex < items.length`.
 
 
