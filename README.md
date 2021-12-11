@@ -4,7 +4,7 @@ Amazing powerful animated widget, it is useful for modern apps by displaying pro
 
 Add Super BottomNavigationBar => Better UI/UX.
 
-Do you like circles ? see  [super_circle](https://pub.dev/packages/super_circle/install)
+Do you like circles ? see  [super_circle](https://pub.dev/packages/super_circle)
 
 
 [![pub](https://img.shields.io/pub/v/super_bottom_navigation_bar?color=blue&label=pub&logo=flutter&style=flat-square)](https://pub.dev/packages/super_bottom_navigation_bar/install)
