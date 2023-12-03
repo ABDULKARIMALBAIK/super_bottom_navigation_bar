@@ -204,12 +204,18 @@ class SuperNavItem extends StatelessWidget {
                       end: Alignment.topCenter,
                     ),
             ),
-            child: Icon(
-              selected ? item.selectedIcon : item.unSelectedIcon,
-              size: selected ? item.size : item.size - 5,
-              color: selected
-                  ? item.selectedIconColor
-                  : item.unSelectedIconColor.withOpacity(0.5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  selected ? item.selectedIcon : item.unSelectedIcon,
+                  size: selected ? item.size : item.size - 5,
+                  color: selected
+                      ? item.selectedIconColor
+                      : item.unSelectedIconColor.withOpacity(0.5),
+                ),
+                item.title ?? SizedBox(),
+              ],
             ),
           ),
         ),
@@ -234,7 +240,8 @@ class SuperBottomNavigationBarItem {
       this.hoverColor = Colors.transparent, //Colors.grey.withOpacity(0.6)
       this.borderBottomColor = const Color(0xFF6c5ce7),
       this.borderBottomWidth = 3,
-      this.backgroundShadowColor = const Color(0xFF6c5ce7)})
+      this.backgroundShadowColor = const Color(0xFF6c5ce7),
+      this.title})
       :
         // assert(unSelectedIcon != null),
         // assert(selectedIcon != null),
@@ -285,4 +292,7 @@ class SuperBottomNavigationBarItem {
 
   ///[backgroundShadowColor] The shadow color behind the icon.
   final Color backgroundShadowColor;
+
+  // [title] The title to display in the tab.
+  final Widget? title;
 }
